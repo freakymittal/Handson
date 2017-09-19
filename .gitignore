@@ -60,3 +60,6 @@ typings/
 #*lock* file
 *lock*
 
+#vscode directory
+.vscode/
+
