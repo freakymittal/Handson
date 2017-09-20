@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="IP Webcam"/>
+    <link rel="shortcut icon" href="ico/favicon.png"/>
+
+    <title>IP Webcam</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+
+    <link href="ipwebcam.css" rel="stylesheet"/>
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="lang.js"></script>
+    <script src="swfobject.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ipwebcam.js"></script>
+    <script src="js/ipwebcam_override.js"></script>
+    <script src="js/ipwebcam_plugins.js"></script>
+
+
+  
+    
+  </head><body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="greet.html">IP Webcam</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav"> 
+            <li ><a href="greet.html">Home</a></li>
+            <li ><a href="videomgr.html">Video archive</a></li>
+            <li class="active" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Videochat drivers <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Windows drivers (video only)</li>
+                <li><a class="hash-change" href="videochat.html#ipca">IP Camera Adapter</a></li>
+                
+                
+                <li class="divider"></li>
+                <li class="dropdown-header">Linux drivers</li>
+                <li><a class="hash-change" href="videochat.html#linux">Driver for Ubuntu GNU/Linux (external link)</a></li>
+              </ul>
+            </li>
+
+            <li  class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other viewing methods <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Android viewers</li>
+                <li><a class="hash-change" href="viewers.html#tinycam">tinyCam Monitor</a></li>
+                <li><a href="http://hit-mob.com/ipwebcam/ipwebcam_howto.html">IP Cam Viewer for Android and iOS (external link)</a></li>
+                <li class="dropdown-header">Cross-platform viewers</li>
+                <li><a class="hash-change" href="viewers.html#vlc">VLC Media Player</a></li>
+                <li><a class="hash-change" href="viewers.html#zoneminder">ZoneMinder</a></li>
+                <li class="dropdown-header">Windows viewers</li>
+                <li><a class="hash-change" href="viewers.html#blueiris">Blue Iris</a></li>
+                <li><a class="hash-change" href="viewers.html#webcamxp">webcamXP</a></li>
+                <li class="dropdown-header">Other</li>
+                <li><a class="hash-change" href="viewers.html#view_outside">Accessing IP Webcam outside local WiFi (e.g. via the internet)</a></li>
+                <li><a class="hash-change" href="viewers.html#mac_bind">Why IP address keeps changing?</a></li>
+                <li><a class="hash-change" href="viewers.html#advanced">Advanced</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+    
+
+
+
+    <div class="container" id="main_container">
+      <div id="init_alert" class="alert alert-danger" style="display: none;">
+        <strong>Cannot get camera status!</strong> Some of the functionality might not work because of <span id="init_error"></span>.
+      </div>
+    <p></p>
+<p><b>Note:</b> These drivers can only emulate video, not audio.</p>
+<p><b>Note:</b> For maximum compatibility set the camera resolution to 320x240.</p>
+
+
+<div class="panel-group" id="accordion">
+
+  
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#ipca">
+          IP Camera Adapter
+        </a>
+      </h4>
+    </div>
+    <div id="ipca" class="panel-collapse collapse">
+      <div class="panel-body">
+
+        <p>My driver doesn't have the unregistered banner and is free for any use.</p>
+ <a href="http://ip-webcam.appspot.com">Download it here.</a>
+<p/>
+ <p>After installing a driver run the configuration utility, enter <b><span class="repl">$URL$</span><span style="color: red;">/video</span></b> into URL field, fill username/password as you configured them in application, and press <b>Autodetect</b> to check if it works and automatically detect the resolution.</p>
+ <p>Now, start your favorite videochat application and enjoy your new webcamera!</p>
+ <img src="collage.png"/>
+<p/>
+ 
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#linux">
+          Linux drivers
+        </a>
+      </h4>
+    </div>
+    <div id="linux" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>Linux driver allows you to use both audio and video on Ubuntu Linux and compatible operating systems. It's both free and open source.</p>
+ <p><a href="https://github.com/bluezio/ipwebcam-gst/">Get it here</a>.</p>
+ <p/>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+
+      <hr/>
+
+      <footer>
+        <p>&copy; Pavel Khlebovich 2013</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    
+
+
+    
+
+<script type="text/javascript">
+  //<!--
+  $(initVideoChat)
+  //-->
+</script>
+
+
+
+    
+  </body>
+</html>

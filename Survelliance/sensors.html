@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="IP Webcam"/>
+    <link rel="shortcut icon" href="ico/favicon.png"/>
+
+    <title>IP Webcam</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="ipwebcam.css" rel="stylesheet"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/jquery.js"></script>
+    <script src="jquery_flot.js"></script>
+    <script src="lang.js"></script>
+    <script src="js/ipwebcam.js"></script>
+    <script src="js/ipwebcam_override.js"></script>
+    <script src="js/ipwebcam_plugins.js"></script>
+    
+    <script type="text/javascript">
+      //<!--
+      $(sensorsMain);
+      
+      //-->
+    </script>
+
+
+  </head>
+
+  <body>
+
+
+    <div class="container" id="placeholder" style="height: 600px; background-color: #eef;">
+
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5" id="checkboxes">
+          
+        </div>
+
+        <div class="col-lg-5" style="padding: 1em;">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="motion_limit" class="col-xs-5 control-label">Motion trigger amount</label>
+              <div class="col-xs-3">
+                <input id="motion_limit" class="col-xs-12" type="number" min="0" step="10"/>
+              </div>
+              <label id="motion_apply" class="col-xs-2 btn btn-sm btn-default">
+                Apply
+              </label>
+              <img src="loader.gif" id="photo_spinner" style="display: none;" />
+              <img src="ok.png" id="photo_ok" style="display: none;" />
+            </div>
+            <div class="form-group">
+              <label for="adet_limit" class="col-xs-5 control-label">Audio trigger amount</label>
+              <div class="col-xs-3">
+                <input id="adet_limit" class="col-xs-12" type="number" min="0" step="10"/>
+              </div>
+              <label id="adet_apply" class="col-xs-2 btn btn-sm btn-default">
+                Apply
+              </label>
+              <img src="loader.gif" id="photo_spinner" style="display: none;" />
+              <img src="ok.png" id="photo_ok" style="display: none;" />
+            </div>
+            <div class="form-group">
+              <div class="col-xs-5" style="text-align: right;"><input id="gpscb" type="checkbox"/> </div>
+              <label for="gpscb">Get location</label>
+            </div>
+            <div class="form-group loc-opt" style="display: none;">
+              <div class="col-xs-5" style="text-align: right;">Latitude</div>
+              <span id="lat">Loading...</span>
+            </div>
+            <div class="form-group loc-opt" style="display: none;">
+              <div class="col-xs-5" style="text-align: right;">Longitude</div>
+              <span id="long">Loading...</span>
+            </div>
+            <div class="form-group loc-opt" style="display: none;">
+              <div class="col-xs-5"></div>
+              <a target="_blank" id="gmaps_link" href="#" class="btn btn-sm btn-default" id="show_on_gmaps">Show on Google Maps</a>
+            </div>
+          </form>
+
+          
+
+          
+        </div>
+      </div>
+
+      <div id="init_alert" class="alert alert-danger" style="display: none;"><strong>Cannot get list of sensors!</strong> Sensor functionality is not available because of <span id="init_error"></span>.</div>
+      <div id="init_warning" class="alert alert-warning" style="display: none;"><strong>No sensors are enabled.</strong> Enable sensors in IP Webcam settings to use this functionality. Note that <strong>motion detection</strong> sensor also requires motion detection enabled.</div>
+      <hr/>
+      <footer>
+        <p>&copy; Pavel Khlebovich 2013</p>
+      </footer>
+    </div> <!-- /container -->
+
+    
+    
+  </body>
+</html>

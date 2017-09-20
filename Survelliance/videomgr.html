@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="IP Webcam"/>
+    <link rel="shortcut icon" href="ico/favicon.png"/>
+
+    <title>IP Webcam</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+
+    <link href="ipwebcam.css" rel="stylesheet"/>
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="lang.js"></script>
+    <script src="swfobject.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ipwebcam.js"></script>
+    <script src="js/ipwebcam_override.js"></script>
+    <script src="js/ipwebcam_plugins.js"></script>
+
+
+  
+    
+  </head><body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="greet.html">IP Webcam</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav"> 
+            <li ><a href="greet.html">Home</a></li>
+            <li class="active"><a href="videomgr.html">Video archive</a></li>
+            <li  class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Videochat drivers <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Windows drivers (video only)</li>
+                <li><a class="hash-change" href="videochat.html#ipca">IP Camera Adapter</a></li>
+                
+                
+                <li class="divider"></li>
+                <li class="dropdown-header">Linux drivers</li>
+                <li><a class="hash-change" href="videochat.html#linux">Driver for Ubuntu GNU/Linux (external link)</a></li>
+              </ul>
+            </li>
+
+            <li  class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other viewing methods <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Android viewers</li>
+                <li><a class="hash-change" href="viewers.html#tinycam">tinyCam Monitor</a></li>
+                <li><a href="http://hit-mob.com/ipwebcam/ipwebcam_howto.html">IP Cam Viewer for Android and iOS (external link)</a></li>
+                <li class="dropdown-header">Cross-platform viewers</li>
+                <li><a class="hash-change" href="viewers.html#vlc">VLC Media Player</a></li>
+                <li><a class="hash-change" href="viewers.html#zoneminder">ZoneMinder</a></li>
+                <li class="dropdown-header">Windows viewers</li>
+                <li><a class="hash-change" href="viewers.html#blueiris">Blue Iris</a></li>
+                <li><a class="hash-change" href="viewers.html#webcamxp">webcamXP</a></li>
+                <li class="dropdown-header">Other</li>
+                <li><a class="hash-change" href="viewers.html#view_outside">Accessing IP Webcam outside local WiFi (e.g. via the internet)</a></li>
+                <li><a class="hash-change" href="viewers.html#mac_bind">Why IP address keeps changing?</a></li>
+                <li><a class="hash-change" href="viewers.html#advanced">Advanced</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+    
+
+<div id="remove_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4>Are you sure?</h4>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title"><p>Remove <a id="filename"></a>?</p>
+ </h4>
+        <p>This operation is irreversible.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="cancel_remove_video_btn" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="remove_video_btn" type="button" class="btn btn-danger">Remove</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div id="explain_webm" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4>What's the deal with WebM?</h4>
+      </div>
+      <div class="modal-body">
+      <p>WebM is an open video format for the web.</p>
+ <p>IP Webcam uses the fast <a href="http://en.wikipedia.org/wiki/VP8">VP8 video codec</a> and <a href="http://en.wikipedia.org/wiki/Opus_(audio_codec)">cutting-edge Opus audio</a> codecs in WebM container to provide the highest-quality video and audio encoded in software.</p>
+ <p>As of writing, only the Chrome browser supports Opus audio in WebM container, but expect VLC Media Player and other browsers to support it soon. <a href="https://www.google.com/intl/en/chrome/browser/">Get Google Chrome here.</a></p>
+ <p>In case your device runs Android 4.1+ and comes with licensed H.264 and AAC encoders, IP Webcam can also record video into widespread <a href="http://en.wikipedia.org/wiki/MPEG4">MPEG4</a> format. Note that there might be restrictions for recording and distributing the resulting video in this format.</p>
+ <p>Select the desired format in <b>IP Webcam Settings menu ⇨ Video Preferences ⇨ Video Recording ⇨ Video Format</b>.</p>
+ <p/>
+ 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+    <div class="container" id="main_container">
+      <div id="init_alert" class="alert alert-danger" style="display: none;">
+        <strong>Cannot get camera status!</strong> Some of the functionality might not work because of <span id="init_error"></span>.
+      </div>
+    
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Folders</h3>
+    </div>
+    <div class="panel-body" id="cat_pane">
+        <p>Loading...</p>
+    </div>
+
+</div>
+<a href="javascript:explainWebM()">What's the deal with WebM?</a>
+
+
+      <hr/>
+
+      <footer>
+        <p>&copy; Pavel Khlebovich 2013</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    
+
+
+    
+<script type="text/javascript">
+  //<!--
+  $(videoMgrInit)
+  //-->
+</script>
+
+
+
+    
+  </body>
+</html>
