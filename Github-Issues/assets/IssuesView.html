@@ -101,11 +101,11 @@
                                 </span>
                     </td>
                     <td class="uk-table-link">
-                        <div><a class="font-weight-bold" ng-click="issues.getComments(issue.number)">{{issue.title}}</a>
+                        <div><a class="font-weight-bold" href="{{issue.html_url}}" ng-click="issues.getComments(issue.number)">{{issue.title}}</a>
                             <a class="badge mr-1" ng-click="issues.getIssuesByLabel(label.name)" ng-repeat="label in issue.labels" style="background-color: #{{label.color}};"
                                 ng-style="invertColor(label.color)" title="Label: {{label.name}}">{{label.name}}</a>
                         </div>
-                        <span class="uk-text-small">#{{issue.number}} opened by <a  ng-click="issues.addToFilter('author:' + issue.user.login);issues.filterResults()">{{issue.user.login}}</a> {{issue.created_at | amTimeAgo}}</span>
+                        <span class="uk-text-small">#{{issue.number}} opened by <a href="" ng-click="issues.addToFilter('author:' + issue.user.login);issues.filterResults()">{{issue.user.login}}</a> {{issue.created_at | amTimeAgo}}</span>
                     </td>
                     <td class="uk-text-nowrap">
                         <a href={{issue.html_url}} class="uk-text-small">
