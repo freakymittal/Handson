@@ -1,0 +1,18 @@
+<div class="post container" ng-init="init()">
+	<form>
+		<legend class="uk-legend">Create Issue</legend>
+		<div class="form-group">
+			<input type="text" name="title" type="email" ng-model="postIssue.title" class="form-control" aria-describedby="emailHelp"
+			    placeholder="Issue Title">
+			<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		</div>
+		<div class="form-group">
+			<textarea name="body" id="" cols="30" rows="10" ng-enter="issues.postIssue(postIssue)" ng-model="postIssue.body" class="form-control"
+			    placeholder="Issue Body"></textarea>
+		</div>
+		<div class="form-group">
+			<input type="text" name="labels" ng-model="postIssue.labels" class="form-control" placeholder="Issue labels separated by comma,">
+		</div>
+		<button type="submit" class="btn btn-primary" ng-click="fn.postIssue(postIssue)">Submit</button>
+	</form>
+</div>

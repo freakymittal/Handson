@@ -1,0 +1,7 @@
+{
+    "repo_name": "twbs/bootstrap",
+    "api_url": "https://api.github.com/",
+    "per_page": 20,
+    "access_token": "c61b4b3ec3b912c482764b8d2c01c6ed4c692543",
+    "access_token_link" : "https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/"
+}
